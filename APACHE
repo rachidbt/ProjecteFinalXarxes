@@ -16,7 +16,7 @@ echo "192.168.3.221"$DOMINIO >> /etc/hosts
 #AGREGAMOS EL VIRTUAL HOST
 echo "<VirtualHost *:80>
 ServerAdmin admin@$DOMINIO
-ServerName  *.$DOMINIO
+ServerName  .$DOMINIO
 ServerAlias $DOMINIO
 
 DocumentRoot $RUTA$DOMINIO/
@@ -29,7 +29,7 @@ AllowOverride All
 Order allow,deny
 allow from all
 </Directory>
-</VirtualHost>" > /etc/apache2/sites-available/$DOMINIO.conf
+</VirtualHost>" >> /etc/apache2/sites-available/$DOMINIO.conf
 
 #CREAMOS EL DIRECTORIO PARA EL DOMINIO
 sudo chmod -R 755 /var/www
