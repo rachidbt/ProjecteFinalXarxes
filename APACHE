@@ -16,7 +16,7 @@ echo "192.168.3.221"$DOMINIO >> /etc/hosts
 #AGREGAMOS EL VIRTUAL HOST
 echo "<VirtualHost *:80>
 ServerAdmin admin@$DOMINIO
-ServerName  .$DOMINIO
+ServerName  www.$DOMINIO
 ServerAlias $DOMINIO
 
 DocumentRoot $RUTA$DOMINIO/
