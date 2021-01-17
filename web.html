@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html>
+<HTML>
 <head>
-  <meta charset="UTF-8">
+    <title>Formulari</title>
+    <meta charset="UTF-8">
 </head>
 <body>
-  <br />
+<h2>Formulario:</h2>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<br />
   <div class="container">
     <section class="row">
       <div class="col-md-12">
@@ -152,7 +154,7 @@
       </div>
     </section>
   </div>
-
   <br /><br />
+</form>
 </body>
 </html>
