@@ -8,8 +8,10 @@
   <FORM ACTION="<?php echo $_SERVER["PHP_SELF"]?>" METHOD="GET">
         <b>Domini:</b>
         <INPUT TYPE="text" NAME="domini" id="domini" value="" >
-        <br><b> Contraseña:</b><br><br>
-       <input type="text" name="contraseña" id="contraseña" value="" > 
+        <br><b> Usuari:</b>
+        <input type="text" name="usuari" id="usuari" value="" >
+        <br><b> Contraseña:</b>
+        <input type="text" name="contraseña" id="contraseña" value="" >
     <H2>Serveis</H2>
           <br><b>Base de dades:</b><br>
        <select name="base[]">
