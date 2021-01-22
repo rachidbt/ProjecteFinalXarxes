@@ -19,12 +19,12 @@ ServerAdmin admin@$DOMINIO
 ServerName  www.$DOMINIO
 ServerAlias $DOMINIO
 
-DocumentRoot $RUTA$DOMINIO/
+DocumentRoot /var/www/$DOMINIO/
 <Directory />
 Options FollowSymLinks
 AllowOverride All
 </Directory>
-<Directory $RUTA$DOMINIO/>
+<Directory /var/www/$DOMINIO/>
 AllowOverride All
 Order allow,deny
 allow from all
@@ -35,8 +35,7 @@ allow from all
 sudo chmod -R 755 /var/www
 mkdir /var/www/$DOMINIO
 chmod 775 /var/www/$DOMINIO
-mkdir /var/www/$DOMINIO/public_html
-cp /var/www/html/index.html /var/www/$DOMINIO/public_html
+cp /var/www/html/index.html /var/www/$DOMINIO/
 
 #CONFIGURAMOS APACHE
 a2ensite $DOMINIO
