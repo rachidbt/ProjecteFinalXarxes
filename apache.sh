@@ -17,6 +17,7 @@ echo "192.168.3.221"$DOMINIO >> /etc/hosts
 echo "<VirtualHost *:80>
 ServerAdmin admin@$DOMINIO
 ServerName  www.$DOMINIO
+Redirect / https://www.$DOMINIO/
 ServerAlias $DOMINIO
 
 DocumentRoot /var/www/$DOMINIO/
@@ -29,6 +30,11 @@ AllowOverride All
 Order allow,deny
 allow from all
 </Directory>
+
+SSLEngine on
+SSLCertificateFile /home/$USER/mydomain.crt
+SSLCertificateKeyFile /home/$USER/mydomain.key
+
 </VirtualHost>" >> /etc/apache2/sites-available/$DOMINIO.conf
 
 #CREAMOS EL DIRECTORIO PARA EL DOMINIO
