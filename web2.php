@@ -33,6 +33,11 @@
            <option value="si"  id="wordpress_si" >SI</option>
            <option value="no"  id="wordpress_no" >NO</option>
        </select>
+            <br><b>HTTP:</b><br>
+       <select name="ftp[]">
+           <option value="si"  id="http_si" >SI</option>
+           <option value="no"  id="http_no" >NO</option>
+       </select>
       <br><br>
       <INPUT TYPE="submit" VALUE="Enviar">
     </FORM>
