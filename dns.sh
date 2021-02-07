@@ -6,6 +6,7 @@
 # $3 == entrada de correu
 
 # Afegir la zona dins l'arxiu named.conf.local
+ip=`hostname -I`
 
 echo "zone \"$1\" {" >> /etc/bind/named.conf.local
 echo -e "\ttype master;" >> /etc/bind/named.conf.local
@@ -28,13 +29,13 @@ sed -i "12 d" /etc/bind/db.$1
 # Entrada de dns
 
 echo -e "@\tIN\tNS\tns.$1." >> /etc/bind/db.$1
-echo -e "ns\tIN\tA\tIP" >> /etc/bind/db.$1
+echo -e "ns\tIN\tA\t$ip" >> /etc/bind/db.$1
 
 # Entrada de pagina web
 
 if [ "$2" -eq 1 ];
 then
-	echo -e "www\tIN\tA\tIP" >> /etc/bind/db.$1
+	echo -e "www\tIN\tA\t$ip" >> /etc/bind/db.$1
 fi
 
 # Entrada de correu
@@ -42,5 +43,5 @@ fi
 if [ "$3" -eq 1 ];
 then
         echo -e "@\tIN\tMX  1   mail.$1." >> /etc/bind/db.$1
-	echo -e "mail\tIN\tA\tIP" >> /etc/bind/db.$1
+	echo -e "mail\tIN\tA\t$ip" >> /etc/bind/db.$1
 fi
