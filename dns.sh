@@ -45,3 +45,7 @@ then
         echo -e "@\tIN\tMX  1   mail.$1." >> /etc/bind/db.$1
 	echo -e "mail\tIN\tA\t$ip" >> /etc/bind/db.$1
 fi
+
+# Reinici del servei
+
+systemctl restart bind9
