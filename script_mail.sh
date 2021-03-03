@@ -1,8 +1,7 @@
 user=$1
 passwd=$2
-data=`date +%s`
-usuari=$user$data
+domini=$3
 
-useradd $usuari -m
+useradd $user -m
 sed -i "s/!/$passwd/g" /etc/shadow
-sed -i "s/mydestination=/mydestination= $user.com, /g" /etc/postfix/main.cf
+sed -i "s/mydestination=/mydestination= $domini.com, /g" /etc/postfix/main.cf
